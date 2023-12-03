@@ -11,7 +11,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
-import org.zalando.problem.ProblemModule;
 import org.zalando.problem.violations.ConstraintViolationProblemModule;
 
 import java.util.ArrayList;
@@ -56,7 +55,7 @@ class UserControllerTest {
         this.userList.add(new User(2L, "user2@gmail.com", "pwd2","User2"));
         this.userList.add(new User(3L, "user3@gmail.com", "pwd3","User3"));
 
-        objectMapper.registerModule(new ProblemModule());
+//        objectMapper.registerModule(new ProblemModule());
         objectMapper.registerModule(new ConstraintViolationProblemModule());
     }
 
